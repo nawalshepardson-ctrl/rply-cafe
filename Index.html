@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rply Cafe | Coffee and matcha on Hendred Ave, Nairobi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&family=Outfit:wght@800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E6E7E5;--ink:#1D1F21;--green:#2A2C2E;--on-green:#F0F1F0;--rust:#7D1F26;--on-rust:#F8ECEA;--sage:#CDD2D5;--muted:#575C60;--line:rgba(29,31,33,.24);
+  --serif:'Instrument Serif',Georgia,'Times New Roman',serif;--sans:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#161718;--ink:#ECEDEC;--green:#0E0F10;--sage:#25282A;--muted:#A4AAAE;--line:rgba(236,237,236,.22);--rust:#9A2A32}
+}
+:root[data-theme="dark"]{--paper:#161718;--ink:#ECEDEC;--green:#0E0F10;--sage:#25282A;--muted:#A4AAAE;--line:rgba(236,237,236,.22);--rust:#9A2A32}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--paper) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");color:var(--ink);font:400 1.0625rem/1.6 var(--sans);-webkit-text-size-adjust:100%;padding-bottom:calc(5.5rem + env(safe-area-inset-bottom,0px))}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1}
+:focus-visible{outline:3px solid var(--rust);outline-offset:3px;border-radius:6px}
+.wrap{max-width:64rem;margin:0 auto;padding:0 1.25rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1.5rem;border-radius:4px;font:700 1rem var(--sans);text-decoration:none;border:2px solid currentColor;cursor:pointer;background:none;color:inherit}
+.btn.fill{background:var(--rust);border-color:var(--rust);color:var(--on-rust)}
+.btn.cream{background:var(--on-green);border-color:var(--on-green);color:var(--green)}
+.btn:hover{filter:brightness(1.08)}
+.hero{background:var(--green) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .09 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");color:var(--on-green);padding-bottom:3.5rem;overflow:hidden}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0}
+.logo{font:800 2.3rem/1 'Outfit',var(--sans);letter-spacing:-.06em;text-decoration:none;padding:.3rem .1rem;background:linear-gradient(180deg,#F7FAFC 0%,#AEB9C1 48%,#E8EEF2 52%,#8F9BA4 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.links{display:flex;gap:1.4rem;font-weight:500}
+.links a{text-decoration:none;padding:.6rem 0}
+.hero-grid{display:grid;gap:1.5rem;padding-top:1.5rem;align-items:center}
+.hero h1{font-size:clamp(3.2rem,14vw,6.6rem);letter-spacing:-.02em}
+.hero h1 em{color:#E58F96}
+.hero p{font-size:1.2rem;max-width:30rem;margin:1.3rem 0 1.7rem;color:#C9CED2}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.status{display:inline-flex;align-items:center;gap:.5rem;font-weight:500;margin-bottom:1.2rem;border:1px solid rgba(241,232,220,.4);padding:.35rem .9rem;border-radius:999px}
+.dot{width:.6rem;height:.6rem;border-radius:50%;background:#9aa;}
+.dot.on{background:#6FD08C}
+.cup{width:min(70%,17rem);justify-self:center}
+section{padding:4.5rem 0 0}
+h2{font-size:clamp(2.4rem,10vw,4.2rem);letter-spacing:-.015em;margin-bottom:.8rem}
+.sub{color:var(--muted);margin:0 0 1.8rem;max-width:32rem}
+.chips{display:flex;gap:.5rem;overflow-x:auto;margin:0 -1.25rem 1.2rem;padding:0 1.25rem .4rem;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips a{flex:none;min-height:44px;display:flex;align-items:center;padding:0 1.1rem;border:1.5px solid var(--line);border-radius:999px;text-decoration:none;font-weight:500}
+.card{background:var(--rust);color:var(--on-rust);border-radius:6px;padding:.4rem 1.3rem 1.4rem}
+.cat h3{font-size:2.1rem;padding:1.6rem 0 .5rem;border-bottom:2px solid var(--on-rust)}
+.cat .note{font-size:.95rem;opacity:.85;margin:.5rem 0 0}
+.cat ul{list-style:none;margin:0;padding:0}
+.cat li{display:flex;align-items:center;gap:.6rem;padding:.35rem 0}
+.n{font-weight:500}
+.d{flex:1;border-bottom:2px dotted rgba(251,237,226,.5);min-width:.8rem;transform:translateY(.2rem)}
+.p{font:400 1.35rem var(--serif);min-width:2.4rem;text-align:right}
+.q{display:flex;align-items:center;gap:.25rem;min-width:7.2rem;justify-content:flex-end}
+.q button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--on-rust);background:none;color:var(--on-rust);font:500 1.4rem/1 var(--sans);cursor:pointer}
+.q button.add{background:var(--on-rust);color:var(--rust)}
+.q span{min-width:1.2rem;text-align:center;font-weight:700}
+.extras{margin-top:1.2rem;padding:1.2rem 1.3rem;border:1.5px dashed var(--line);border-radius:6px;color:var(--muted)}
+.extras b{color:var(--ink);font-weight:500}
+.feature{display:grid;gap:1rem;margin-top:1.8rem}
+.fcard{padding:1.8rem;border-radius:6px;background:var(--sage)}
+.fcard.big{background:var(--green);color:var(--on-green)}
+.fcard h3{font-size:2rem;margin-bottom:.5rem}
+.fcard .pr{font:italic 400 3.2rem/1 var(--serif);margin-top:1rem}
+.fcard.big h3{font-size:clamp(2.4rem,9vw,3.6rem)}
+.quotes{display:grid;gap:2rem;margin-top:1.8rem}
+blockquote{margin:0;font:italic 400 clamp(1.9rem,7vw,2.8rem)/1.1 var(--serif);padding-left:1.1rem;border-left:4px solid var(--rust)}
+.meta{color:var(--muted);margin-top:1.4rem}
+.visit{display:grid;gap:2rem;margin-top:1.6rem}
+dl{margin:0;display:grid;gap:1.1rem}
+dt{font-weight:700;color:var(--rust)}
+dd{margin:0;font-size:1.2rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) dt{color:#E58F96}}
+footer{margin-top:4.5rem;padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+#bar{position:fixed;left:0;right:0;bottom:0;background:var(--ink);color:var(--paper);padding:.8rem 1.25rem calc(.8rem + env(safe-area-inset-bottom,0px));display:flex;gap:.8rem;align-items:center;justify-content:space-between;z-index:5}
+#bar[hidden]{display:none}
+#bar .t{font-weight:700}
+#bar small{display:block;font-weight:400;opacity:.8}
+#bar .btn{min-height:46px}
+#clr{background:none;border:0;color:inherit;text-decoration:underline;font:500 .95rem var(--sans);cursor:pointer;min-height:44px}
+@media (min-width:800px){
+  .hero-grid{grid-template-columns:1.5fr 1fr}
+  .card{columns:2;column-gap:3rem}
+  .cat{break-inside:avoid}
+  .feature{grid-template-columns:1.4fr 1fr 1fr}
+  .quotes{grid-template-columns:1fr 1fr}
+  .visit{grid-template-columns:1fr 1fr}
+  .chips{flex-wrap:wrap;margin:0 0 1.2rem;padding:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#top" aria-label="Rply Cafe">Rply</a>
+      <div class="links"><a href="#menu">Menu</a><a href="#visit">Visit</a></div>
+    </nav>
+    <div class="hero-grid">
+      <div>
+        <div class="status"><span class="dot" id="dot"></span><span id="status">Open 10 AM to 10 PM</span></div>
+        <h1>Slow coffee, bright matcha, and a tiramisu <em>worth the trip.</em></h1>
+        <p>Rply is a small coffee spot on Hendred Ave in Nairobi. Pull up a chair, or build your order below and send it to us on WhatsApp.</p>
+        <div class="actions">
+          <a class="btn cream" href="#menu">Start your order</a>
+          <a class="btn" href="#visit">Find us</a>
+        </div>
+      </div>
+      <svg class="cup" viewBox="0 0 200 200" role="img" aria-label="A steaming cup of coffee">
+        <path d="M70 30c-10 14 10 22 0 36M100 22c-10 14 10 22 0 36M130 30c-10 14 10 22 0 36" fill="none" stroke="#D5DCE1" stroke-width="5" stroke-linecap="round"/>
+        <path d="M40 84h120v34c0 26-22 46-60 46s-60-20-60-46z" fill="#7D1F26"/>
+        <path d="M160 94h10c14 0 20 8 20 18s-6 18-20 18h-14" fill="none" stroke="#7D1F26" stroke-width="9" stroke-linecap="round"/>
+        <ellipse cx="100" cy="84" rx="60" ry="10" fill="#4A1218"/>
+        <ellipse cx="100" cy="177" rx="84" ry="10" fill="#C9D2D8" opacity=".9"/><text x="100" y="136" text-anchor="middle" font-family="Outfit,Arial,sans-serif" font-weight="800" font-size="30" letter-spacing="-2" fill="#F1E8DC">Rply</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="menu">
+    <h2>The menu</h2>
+    <p class="sub">Tap + to build an order. We will put it into a WhatsApp message for you. All prices in Ksh.</p>
+    <div class="chips" id="chips"></div>
+    <div class="card" id="card"></div>
+    <div class="extras"><b>Add-ons:</b> Oat milk (Oatly) +150, extra shot +50, extra syrup +100. <b>Sparkling water</b> 250.</div>
+  </section>
+
+  <section>
+    <h2>Only at Rply</h2>
+    <div class="feature">
+      <div class="fcard big"><h3>Tiramisu Pecan</h3><div>The slice guests keep talking about. Pair it with a flat white.</div><div class="pr">750</div></div>
+      <div class="fcard"><h3>Salted Vanilla Matcha</h3><div>Matcha, vanilla and a pinch of salt.</div><div class="pr">750</div></div>
+      <div class="fcard"><h3>Cookies</h3><div>A little something with your cup.</div><div class="pr">300</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Kind words</h2>
+    <div class="quotes">
+      <blockquote>Newest and hottest coffee spot in town.</blockquote>
+      <blockquote>Best matcha in town.</blockquote>
+    </div>
+    <p class="meta">Rated 4.9 out of 5 by guests on Google.</p>
+  </section>
+
+  <section id="visit">
+    <h2>Come say hi</h2>
+    <div class="visit">
+      <dl>
+        <div><dt>Where</dt><dd>Hendred Ave, Nairobi</dd></div>
+        <div><dt>Hours</dt><dd>Every day, 10 AM to 10 PM</dd></div>
+        <div><dt>Call or WhatsApp</dt><dd><a href="tel:+254790778442">0790 778442</a></dd></div>
+      </dl>
+      <div class="actions" style="align-content:start">
+        <a class="btn fill" href="https://www.google.com/maps/search/?api=1&amp;query=Rply+Cafe+Hendred+Ave+Nairobi" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn" href="https://wa.me/254790778442" target="_blank" rel="noopener">Message us</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© Rply Cafe. Website design by Nawal.</div></footer>
+
+<div id="bar" hidden>
+  <div class="t"><span id="cnt"></span><small id="tot"></small></div>
+  <div style="display:flex;gap:.4rem;align-items:center"><button id="clr" type="button">Clear</button><a class="btn fill" id="send" target="_blank" rel="noopener" href="#">Send on WhatsApp</a></div>
+</div>
+
+<script>
+var M=[
+ ['Classics',[['Espresso',300],['Americano',350],['Cappuccino',400],['Flat white',400],['Cafe latte',400],['Piccolo',370],['Cortado',350],['Mocha',550],['Macchiato',250],['Hot chocolate',500]]],
+ ['Iced coffee',[['Iced latte',400],['Iced vanilla latte',500],['Iced Spanish latte',600],['Iced caramel latte',550],['Espresso shake',600],['Shaken brown sugar',600],['Espresso tonic',500]]],
+ ['Speciality brews',[['V60 pour over',600]],'Hand-brewed, one cup at a time.'],
+ ['Matcha',[['Vanilla matcha',600],['Salted vanilla matcha',750],['Maple matcha',700],['Birthday matcha',700]]],
+ ['Tea and refreshers',[['Chai latte',500],['Masala tea',450],['Black tea',250],['Passion iced tea',550],['Hibiscus',500],['Sunset refresher',650],['Golden sunset refresher',650]]],
+ ['Rply specials',[['Tiramisu pecan',750],['Cookies',300]]]
+];
+var qty={},card=document.getElementById('card'),chips=document.getElementById('chips');
+M.forEach(function(g,a){
+  var id='c'+a,c=document.createElement('a');c.href='#'+id;c.textContent=g[0];
+  c.onclick=function(e){e.preventDefault();document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'})};chips.appendChild(c);
+  var d=document.createElement('div');d.className='cat';d.id=id;
+  var h='<h3>'+g[0]+'</h3>'+(g[2]?'<p class="note">'+g[2]+'</p>':'')+'<ul>';
+  g[1].forEach(function(x,b){h+='<li><span class="n">'+x[0]+'</span><span class="d"></span><span class="p">'+x[1]+'</span><span class="q" id="q'+a+'_'+b+'"></span></li>'});
+  d.innerHTML=h+'</ul>';card.appendChild(d);
+  g[1].forEach(function(x,b){draw(a,b)});
+});
+function draw(a,b){
+  var k=a+'_'+b,n=qty[k]||0,q=document.getElementById('q'+k),nm=M[a][1][b][0];
+  q.innerHTML=n?'<button type="button" aria-label="Remove one '+nm+'" data-k="'+k+'" data-d="-1">\u2212</button><span>'+n+'</span><button type="button" class="add" aria-label="Add one '+nm+'" data-k="'+k+'" data-d="1">+</button>':'<button type="button" class="add" aria-label="Add '+nm+'" data-k="'+k+'" data-d="1">+</button>';
+}
+card.addEventListener('click',function(e){
+  var t=e.target.closest('button');if(!t)return;
+  var k=t.dataset.k,s=k.split('_');qty[k]=Math.max(0,(qty[k]||0)+parseInt(t.dataset.d,10));
+  draw(+s[0],+s[1]);upd();
+});
+document.getElementById('clr').onclick=function(){
+  Object.keys(qty).forEach(function(k){var s=k.split('_');qty[k]=0;draw(+s[0],+s[1])});upd();
+};
+function upd(){
+  var n=0,t=0,L=[];
+  M.forEach(function(g,a){g[1].forEach(function(x,b){var q=qty[a+'_'+b]||0;if(q){n+=q;t+=q*x[1];L.push('- '+q+' x '+x[0]+' (Ksh '+(q*x[1])+')')}})});
+  var bar=document.getElementById('bar');bar.hidden=!n;if(!n)return;
+  document.getElementById('cnt').textContent=n+(n===1?' item':' items');
+  document.getElementById('tot').textContent='Total Ksh '+t;
+  var msg='Hi Rply Cafe! I would like to order:\n'+L.join('\n')+'\nTotal: Ksh '+t;
+  document.getElementById('send').href='https://wa.me/254790778442?text='+encodeURIComponent(msg);
+}
+(function(){
+  var s=document.getElementById('status'),d=document.getElementById('dot');
+  try{
+    var h=parseInt(new Intl.DateTimeFormat('en-GB',{hour:'numeric',hour12:false,timeZone:'Africa/Nairobi'}).format(new Date()),10)%24;
+    if(h>=10&&h<22){d.className='dot on';s.textContent='Open now, until 10 PM'}else{s.textContent='Closed now, opens at 10 AM'}
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
